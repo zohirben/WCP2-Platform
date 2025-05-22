@@ -47,7 +47,7 @@ export default function ContactPage() {
         <div 
           className="absolute inset-0 opacity-10 z-0 pointer-events-none"
           style={{
-            backgroundImage: "url('/pattern-options/moroccan-zellij-pattern2.svg')",
+            backgroundImage: "url('/downloaded designs/Tarceeh 1-7-11imageOne.jpg')",
             backgroundRepeat: "repeat",
             backgroundSize: "400px",
           }}

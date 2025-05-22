@@ -21,7 +21,7 @@ export default function OffersPage() {
         <div 
           className="absolute inset-0 opacity-10 z-0 pointer-events-none"
           style={{
-            backgroundImage: "url('/pattern-options/moroccan-zellij-pattern1.svg')",
+            backgroundImage: "url('/downloaded designs/Tarceeh 1-7-11imageOne.jpg')",
             backgroundRepeat: "repeat",
             backgroundSize: "400px",
           }}
@@ -206,7 +206,14 @@ export default function OffersPage() {
 
       {/* CTA Section */}
       <section className="py-16 bg-[#2B6CB0] text-white relative overflow-hidden">
-        <MoroccanArchPattern className="opacity-5" />
+        <div 
+          className="absolute inset-0 opacity-10 z-0 pointer-events-none"
+          style={{
+            backgroundImage: "url('/downloaded designs/Tarceeh 1-7-11imageOne.jpg')",
+            backgroundRepeat: "repeat",
+            backgroundSize: "400px",
+          }}
+        />
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="max-w-2xl mx-auto">
             <h2 className="font-amiri text-3xl md:text-4xl font-bold mb-6">

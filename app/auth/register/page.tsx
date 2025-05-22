@@ -35,7 +35,7 @@ export default function RegisterPage() {
       {/* Right side - Image */}
       <div className="hidden lg:block w-1/2 bg-[#C53030] relative overflow-hidden">
         <div 
-          className="absolute inset-0 opacity-8 z-0 pointer-events-none"
+          className="absolute inset-0 opacity-8 z-0 pointer-events-none animate-pattern-float"
           style={{
             backgroundImage: "url('/downloaded designs/istockphoto-182416152-612x612.jpg')",
             backgroundRepeat: "repeat",

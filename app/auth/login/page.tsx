@@ -35,7 +35,7 @@ export default function LoginPage() {
       {/* Right side - Image */}
       <div className="hidden lg:block w-1/2 bg-[#2B6CB0] relative overflow-hidden">
         <div 
-          className="absolute inset-0 opacity-10 z-0 pointer-events-none"
+          className="absolute inset-0 opacity-10 z-0 pointer-events-none animate-pattern-float"
           style={{
             backgroundImage: "url('/downloaded designs/Tarceeh 1-7-11imageOne.jpg')",
             backgroundRepeat: "repeat",

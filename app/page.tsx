@@ -26,7 +26,14 @@ export default function Home() {
     <div className={`${loaded ? "opacity-100" : "opacity-0"} transition-opacity duration-500`}>
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-moroccan-red text-white">
-        <CustomZellijPattern imageUrl="/zellij-2.jpg" opacity={0.1} size="350px" />
+        <div 
+          className="absolute inset-0 opacity-10 z-0 pointer-events-none animate-pattern-float"
+          style={{
+            backgroundImage: "url('/zellij-2.jpg')",
+            backgroundRepeat: "repeat",
+            backgroundSize: "350px",
+          }}
+        />
         <div className="container mx-auto px-4 py-16 md:py-24 lg:py-32 flex flex-col lg:flex-row items-center gap-10 relative z-10">
           <div className="lg:w-1/2 space-y-6 animate-fadeInUp">
             <h1 className="font-amiri text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
@@ -226,7 +233,7 @@ export default function Home() {
       {/* CTA Section */}
       <section className="py-16 bg-[#C53030] text-white relative overflow-hidden">
         <div 
-          className="absolute inset-0 opacity-10 z-0 pointer-events-none"
+          className="absolute inset-0 opacity-10 z-0 pointer-events-none animate-pattern-float"
           style={{
             backgroundImage: "url('/downloaded designs/Tarceeh 1-7-11imageOne.jpg')",
             backgroundRepeat: "repeat",

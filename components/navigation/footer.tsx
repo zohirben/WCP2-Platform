@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <footer className="bg-moroccan-blue text-white relative overflow-hidden pt-16">
       <div 
-        className="absolute inset-0 opacity-10 z-0 pointer-events-none"
+        className="absolute inset-0 opacity-10 z-0 pointer-events-none animate-pattern-float"
         style={{
           backgroundImage: "url('/downloaded designs/Tarceeh 1-7-11imageOne.jpg')",
           backgroundRepeat: "repeat",

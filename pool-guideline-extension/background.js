@@ -9,7 +9,9 @@ chrome.runtime.onInstalled.addListener(() => {
     guidelineOpacity: 0.6,
     guidelineWidth: 2,
     activationKey: 'Shift',
-    activeSites: ['discord.com', '*pool*', '*billiard*']
+    activeSites: ['discord.com', '*pool*', '*billiard*'],
+    allowAnyWebsite: false,
+    manualMode: false
   });
   
   console.log('Pool Game Assistant installed with default settings');
@@ -28,5 +30,25 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       sendResponse({ enabled: !data.enabled });
     });
     return true; // Required for async response
+  } else if (request.action === 'updateSettings') {
+    if (request.settings) {
+      chrome.storage.sync.set(request.settings, () => {
+        // If this was called from the popup, notify all tabs about the changes
+        if (sender.tab === undefined) {
+          chrome.tabs.query({}, (tabs) => {
+            tabs.forEach(tab => {
+              chrome.tabs.sendMessage(tab.id, { 
+                action: 'updateSettings',
+                settings: request.settings 
+              }).catch(err => {
+                // Ignore errors from tabs that don't have our content script
+              });
+            });
+          });
+        }
+        sendResponse({ success: true });
+      });
+      return true; // Required for async response
+    }
   }
 });

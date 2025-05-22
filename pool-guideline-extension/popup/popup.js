@@ -3,6 +3,8 @@
 document.addEventListener('DOMContentLoaded', function() {
   const enabledToggle = document.getElementById('enabled');
   const statusText = document.getElementById('status-text');
+  const allowAnyWebsiteToggle = document.getElementById('allowAnyWebsite');
+  const anysiteText = document.getElementById('anysite-text');
   const guidelineColor = document.getElementById('guidelineColor');
   const guidelineOpacity = document.getElementById('guidelineOpacity');
   const opacityValue = document.getElementById('opacityValue');
@@ -12,12 +14,19 @@ document.addEventListener('DOMContentLoaded', function() {
   const activeSites = document.getElementById('activeSites');
   const saveButton = document.getElementById('saveSettings');
   const detectionStatus = document.getElementById('detectionStatus');
+  const manualControls = document.getElementById('manual-controls');
+  const manualToggleBtn = document.getElementById('manualToggle');
   
   // Load current settings
   chrome.storage.sync.get(null, function(settings) {
     if (settings) {
       enabledToggle.checked = settings.enabled;
       statusText.textContent = settings.enabled ? "Enabled" : "Disabled";
+      
+      if (settings.allowAnyWebsite !== undefined) {
+        allowAnyWebsiteToggle.checked = settings.allowAnyWebsite;
+        anysiteText.textContent = settings.allowAnyWebsite ? "Enabled" : "Disabled";
+      }
       
       if (settings.guidelineColor) 
         guidelineColor.value = settings.guidelineColor;
@@ -43,12 +52,24 @@ document.addEventListener('DOMContentLoaded', function() {
   // Check if the extension has detected a pool game
   chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
     chrome.tabs.sendMessage(tabs[0].id, { action: 'getDetectionStatus' }, function(response) {
-      if (response && response.poolGameDetected) {
-        detectionStatus.textContent = 'Pool game detected!';
-        detectionStatus.style.color = '#4CAF50';
-      } else {
-        detectionStatus.textContent = 'No pool game detected on current page.';
-        detectionStatus.style.color = '#F44336';
+      if (response) {
+        if (response.poolGameDetected) {
+          detectionStatus.textContent = response.manualMode ? 
+            'Manual mode activated!' : 'Pool game detected!';
+          detectionStatus.style.color = '#4CAF50';
+        } else {
+          detectionStatus.textContent = 'No pool game detected on current page.';
+          detectionStatus.style.color = '#F44336';
+        }
+        
+        // Show manual controls if allowed on any website
+        if (allowAnyWebsiteToggle.checked) {
+          manualControls.style.display = 'block';
+          manualToggleBtn.textContent = response.manualMode ? 
+            'Disable Pool Assistant' : 'Enable Pool Assistant';
+        } else {
+          manualControls.style.display = 'none';
+        }
       }
     });
   });
@@ -78,6 +99,39 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
+  // Toggle allow on any website
+  allowAnyWebsiteToggle.addEventListener('change', function() {
+    anysiteText.textContent = this.checked ? "Enabled" : "Disabled";
+    
+    // Show/hide manual controls based on this setting
+    manualControls.style.display = this.checked ? 'block' : 'none';
+    
+    // Update setting in storage
+    chrome.storage.sync.set({ allowAnyWebsite: this.checked });
+    
+    // Notify active tabs of the change
+    chrome.runtime.sendMessage({ 
+      action: 'updateSettings',
+      settings: { allowAnyWebsite: this.checked }
+    });
+  });
+  
+  // Manual toggle button
+  manualToggleBtn.addEventListener('click', function() {
+    // Send message to content script to toggle manual mode
+    chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+      chrome.tabs.sendMessage(tabs[0].id, { action: 'toggleManualMode' }, function(response) {
+        if (response && response.manualMode !== undefined) {
+          manualToggleBtn.textContent = response.manualMode ? 
+            'Disable Pool Assistant' : 'Enable Pool Assistant';
+            
+          detectionStatus.textContent = response.manualMode ? 
+            'Manual mode activated!' : 'Manual mode disabled';
+        }
+      });
+    });
+  });
+  
   // Save settings button
   saveButton.addEventListener('click', function() {
     // Parse the active sites text area into an array
@@ -93,7 +147,8 @@ document.addEventListener('DOMContentLoaded', function() {
       guidelineOpacity: parseFloat(guidelineOpacity.value),
       guidelineWidth: parseInt(guidelineWidth.value),
       activationKey: activationKey.value,
-      activeSites: sitesArray
+      activeSites: sitesArray,
+      allowAnyWebsite: allowAnyWebsiteToggle.checked
     };
     
     chrome.storage.sync.set(settings, function() {

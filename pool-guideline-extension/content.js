@@ -7,7 +7,9 @@ let settings = {
   guidelineOpacity: 0.6,
   guidelineWidth: 2,
   activationKey: 'Shift',
-  activeSites: ['discord.com', '*pool*', '*billiard*']
+  activeSites: ['discord.com', '*pool*', '*billiard*'],
+  allowAnyWebsite: false,
+  manualMode: false
 };
 
 let canvas = null;
@@ -21,6 +23,7 @@ let cueBall = null;
 let targetBall = null;
 let overlay = null;
 let poolStick = null;
+let toggleButton = null;
 
 // Initialize
 function init() {
@@ -28,12 +31,15 @@ function init() {
   // Load settings
   chrome.runtime.sendMessage({ action: 'getSettings' }, response => {
     if (response && response.settings) {
-      settings = response.settings;
+      settings = { ...settings, ...response.settings };
       console.log('Settings loaded:', settings);
       
-      // Check if on a compatible site
-      if (isCompatibleSite()) {
-        console.log('Compatible site detected, starting detection loop');
+      // Create toggle button regardless of site compatibility
+      createToggleButton();
+      
+      // Check if on a compatible site or if manual mode is enabled
+      if (isCompatibleSite() || settings.allowAnyWebsite) {
+        console.log('Compatible site detected or manual mode enabled');
         // Start looking for pool game
         detectPoolGame();
       } else {
@@ -41,6 +47,139 @@ function init() {
       }
     }
   });
+  
+  // Listen for messages from popup
+  chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+    if (request.action === 'updateSettings') {
+      settings = { ...settings, ...request.settings };
+      console.log('Settings updated:', settings);
+      
+      // If allowAnyWebsite was toggled, update the toggle button visibility
+      if (settings.allowAnyWebsite !== undefined) {
+        if (toggleButton) {
+          toggleButton.style.display = settings.allowAnyWebsite ? 'block' : 'none';
+        }
+        
+        // If allowing any website now, start detection if not already done
+        if (settings.allowAnyWebsite && !poolGameDetected) {
+          detectPoolGame();
+        }
+      }
+      
+      sendResponse({ success: true });
+    } else if (request.action === 'getDetectionStatus') {
+      sendResponse({ 
+        poolGameDetected: poolGameDetected,
+        manualMode: settings.manualMode
+      });
+    } else if (request.action === 'toggleManualMode') {
+      settings.manualMode = !settings.manualMode;
+      
+      if (toggleButton) {
+        toggleButton.textContent = settings.manualMode ? 'Disable Pool Assistant' : 'Enable Pool Assistant';
+      }
+      
+      if (settings.manualMode) {
+        // Force create the overlay if it doesn't exist
+        if (!poolGameDetected) {
+          poolGameDetected = true;
+          
+          // Use viewport as game area
+          poolTableDimensions = {
+            width: window.innerWidth * 0.8,
+            height: window.innerHeight * 0.8,
+            x: window.innerWidth * 0.1,
+            y: window.innerHeight * 0.1
+          };
+          
+          // Estimate pockets
+          estimatePockets();
+          
+          // Set up the overlay
+          setupOverlay();
+        } else {
+          if (overlay) {
+            overlay.style.display = 'block';
+          }
+        }
+      } else {
+        // Hide the overlay
+        if (overlay) {
+          overlay.style.display = 'none';
+        }
+      }
+      
+      // Update settings in storage
+      chrome.runtime.sendMessage({ 
+        action: 'updateSettings',
+        settings: { manualMode: settings.manualMode }
+      });
+      
+      sendResponse({ manualMode: settings.manualMode });
+    }
+    
+    return true; // Required for async response
+  });
+}
+
+// Create toggle button for manual activation
+function createToggleButton() {
+  // Remove any existing button
+  if (toggleButton) {
+    toggleButton.remove();
+  }
+  
+  // Create the toggle button
+  toggleButton = document.createElement('button');
+  toggleButton.id = 'pool-assistant-toggle';
+  toggleButton.className = 'pool-assistant-button';
+  toggleButton.textContent = settings.manualMode ? 'Disable Pool Assistant' : 'Enable Pool Assistant';
+  toggleButton.style.display = settings.allowAnyWebsite ? 'block' : 'none';
+  
+  // Add click event
+  toggleButton.addEventListener('click', () => {
+    settings.manualMode = !settings.manualMode;
+    toggleButton.textContent = settings.manualMode ? 'Disable Pool Assistant' : 'Enable Pool Assistant';
+    
+    if (settings.manualMode) {
+      // Force create the overlay if it doesn't exist
+      if (!poolGameDetected) {
+        poolGameDetected = true;
+        
+        // Use viewport as game area
+        poolTableDimensions = {
+          width: window.innerWidth * 0.8,
+          height: window.innerHeight * 0.8,
+          x: window.innerWidth * 0.1,
+          y: window.innerHeight * 0.1
+        };
+        
+        // Estimate pockets
+        estimatePockets();
+        
+        // Set up the overlay
+        setupOverlay();
+      } else {
+        if (overlay) {
+          overlay.style.display = 'block';
+        }
+      }
+    } else {
+      // Hide the overlay
+      if (overlay) {
+        overlay.style.display = 'none';
+      }
+    }
+    
+    // Update settings in storage
+    chrome.runtime.sendMessage({ 
+      action: 'updateSettings',
+      settings: { manualMode: settings.manualMode }
+    });
+  });
+  
+  // Add the button to the page
+  document.body.appendChild(toggleButton);
 }
 
 // Check if current site is in the list of compatible sites
@@ -145,14 +284,32 @@ function estimatePockets() {
   // and will need to be fine-tuned for specific games
   const { width, height, x, y } = poolTableDimensions;
   
-  pockets = [
-    { x: x + width * 0.05, y: y + height * 0.05 }, // Top-left
-    { x: x + width * 0.5, y: y + height * 0.03 },  // Top-center
-    { x: x + width * 0.95, y: y + height * 0.05 }, // Top-right
-    { x: x + width * 0.05, y: y + height * 0.95 }, // Bottom-left
-    { x: x + width * 0.5, y: y + height * 0.97 },  // Bottom-center
-    { x: x + width * 0.95, y: y + height * 0.95 }  // Bottom-right
-  ];
+  // Check if we're in manual mode to use a more generous pocket layout
+  if (settings.manualMode) {
+    // In manual mode, create 8 pockets (4 corners, 4 sides) for better coverage
+    pockets = [
+      { x: x + width * 0.05, y: y + height * 0.05 },  // Top-left
+      { x: x + width * 0.33, y: y + height * 0.03 },  // Top-left-center
+      { x: x + width * 0.66, y: y + height * 0.03 },  // Top-right-center
+      { x: x + width * 0.95, y: y + height * 0.05 },  // Top-right
+      { x: x + width * 0.03, y: y + height * 0.5 },   // Middle-left
+      { x: x + width * 0.97, y: y + height * 0.5 },   // Middle-right
+      { x: x + width * 0.05, y: y + height * 0.95 },  // Bottom-left
+      { x: x + width * 0.33, y: y + height * 0.97 },  // Bottom-left-center
+      { x: x + width * 0.66, y: y + height * 0.97 },  // Bottom-right-center
+      { x: x + width * 0.95, y: y + height * 0.95 }   // Bottom-right
+    ];
+  } else {
+    // Standard 6 pocket pool table
+    pockets = [
+      { x: x + width * 0.05, y: y + height * 0.05 }, // Top-left
+      { x: x + width * 0.5, y: y + height * 0.03 },  // Top-center
+      { x: x + width * 0.95, y: y + height * 0.05 }, // Top-right
+      { x: x + width * 0.05, y: y + height * 0.95 }, // Bottom-left
+      { x: x + width * 0.5, y: y + height * 0.97 },  // Bottom-center
+      { x: x + width * 0.95, y: y + height * 0.95 }  // Bottom-right
+    ];
+  }
   
   console.log('Estimated pockets:', pockets);
 }
@@ -189,6 +346,35 @@ function setupOverlay() {
   
   // Set up event listeners
   setupEventListeners();
+  
+  // If the overlay is being set up for manual mode
+  if (settings.manualMode) {
+    // Add a helper label for first-time users
+    const helperLabel = document.createElement('div');
+    helperLabel.textContent = 'Hold ' + settings.activationKey + ' key and move mouse to use guidelines';
+    helperLabel.style.position = 'fixed';
+    helperLabel.style.bottom = '20px';
+    helperLabel.style.left = '50%';
+    helperLabel.style.transform = 'translateX(-50%)';
+    helperLabel.style.background = 'rgba(0,0,0,0.7)';
+    helperLabel.style.color = 'white';
+    helperLabel.style.padding = '8px 12px';
+    helperLabel.style.borderRadius = '4px';
+    helperLabel.style.fontSize = '14px';
+    helperLabel.style.zIndex = '10000';
+    helperLabel.style.pointerEvents = 'none';
+    
+    // Auto-hide after 5 seconds
+    setTimeout(() => {
+      helperLabel.style.transition = 'opacity 1s ease';
+      helperLabel.style.opacity = '0';
+      setTimeout(() => {
+        helperLabel.remove();
+      }, 1000);
+    }, 5000);
+    
+    document.body.appendChild(helperLabel);
+  }
   
   console.log('Overlay setup complete');
 }
@@ -247,27 +433,75 @@ function setupEventListeners() {
 
 // Find cue ball and target ball based on mouse position
 function findBalls(mouseX, mouseY) {
-  // In a real implementation, we'd use computer vision or game state analysis
-  // For this demo, we'll use the mouse position as target ball
-  // and estimate cue ball position
-  
-  // For demo purposes, assume cue ball is near bottom center
+  // Get table dimensions
   const { width, height, x, y } = poolTableDimensions;
   
-  // This is just an estimate - real implementation would need to detect the actual balls
-  cueBall = {
-    x: x + width * 0.5,
-    y: y + height * 0.75,
-    radius: Math.min(width, height) * 0.02
-  };
+  // Ball radius based on table size
+  const ballRadius = Math.min(width, height) * 0.02;
   
-  // Use mouse position as target ball
-  targetBall = {
-    x: mouseX,
-    y: mouseY,
-    radius: cueBall.radius
-  };
+  // In manual mode, allow the user to set both cue ball and target
+  if (settings.manualMode) {
+    // Check if this is the first time we're setting up in manual mode
+    if (!manualCueBallSet) {
+      // Set initial cue ball position
+      cueBall = {
+        x: mouseX - 100, // Offset from mouse so it's not directly under cursor
+        y: mouseY,
+        radius: ballRadius
+      };
+      
+      // Store this state
+      manualCueBallSet = true;
+      
+      // Remember last click for delayed double-click detection
+      lastManualClick = Date.now();
+    }
+    
+    // Allow user to move cue ball with double ESC key
+    document.addEventListener('keydown', function(e) {
+      // If user presses ESC twice within 500ms
+      if (e.key === 'Escape') {
+        const now = Date.now();
+        if (now - lastEscPress < 500) {
+          // Reset cue ball position to be near mouse
+          cueBall = {
+            x: mouseX - 100,
+            y: mouseY,
+            radius: ballRadius
+          };
+        }
+        lastEscPress = now;
+      }
+    });
+    
+    // Use mouse position as target ball
+    targetBall = {
+      x: mouseX,
+      y: mouseY,
+      radius: ballRadius
+    };
+  } else {
+    // For regular mode - use standard approach
+    // This is just an estimate - real implementation would try to detect the actual balls
+    cueBall = {
+      x: x + width * 0.5,
+      y: y + height * 0.75,
+      radius: ballRadius
+    };
+    
+    // Use mouse position as target ball
+    targetBall = {
+      x: mouseX,
+      y: mouseY,
+      radius: ballRadius
+    };
+  }
 }
+
+// Track manual mode variables
+let manualCueBallSet = false;
+let lastManualClick = 0;
+let lastEscPress = 0;
 
 // Draw the aiming guidelines
 function drawGuidelines() {

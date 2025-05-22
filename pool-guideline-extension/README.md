@@ -12,6 +12,8 @@ A modern browser extension that provides aiming guidelines for online pool/billi
 - Calculates optimal shots from the cue ball to target balls to pockets
 - Customizable guideline appearance (color, opacity, width)
 - Adapts to different screen sizes and game layouts
+- **NEW:** Manual Mode - Enable guidelines on ANY website with a simple toggle button
+- **NEW:** Double-press ESC key to reposition the cue ball in manual mode
 
 ## Installation
 
@@ -25,22 +27,34 @@ A modern browser extension that provides aiming guidelines for online pool/billi
 
 ## Usage
 
+### Automatic Mode
 1. Navigate to any website with a pool/billiards game
 2. The extension will automatically detect the game
 3. Hold down the Shift key (or your configured activation key) to show aiming guidelines
 4. Position your mouse over the ball you want to hit
 5. The guidelines will show the optimal paths for pocketing the ball
 
+### Manual Mode (NEW!)
+1. Open the extension popup and enable "Allow on Any Website"
+2. A blue button will appear in the top-right corner of your browser
+3. Click the button to enable Pool Assistant on the current page
+4. Hold the Shift key to show guidelines and move your mouse to position them
+5. Double-press ESC key to reposition the cue ball relative to your mouse cursor
+6. Use this mode on ANY website where automatic detection doesn't work
+
 ## Configuration
 
 Click on the extension icon in your browser toolbar to open the settings panel:
 
 - **Enable/Disable**: Toggle the extension on or off
+- **Allow on Any Website**: Enable the manual toggle button on any website
 - **Guideline Color**: Choose the color of the aiming lines
 - **Guideline Opacity**: Adjust how transparent the guidelines are
 - **Guideline Width**: Set the thickness of the guidelines
 - **Activation Key**: Change which key activates the guidelines
-- **Active Websites**: Configure which websites the extension works on
+- **Active Websites**: Configure which websites the extension works on automatically
+
+When "Allow on Any Website" is enabled, a button appears in the top-right corner of any webpage that lets you manually activate the pool guidelines. This is perfect for games where automatic detection doesn't work!
 
 ## How It Works
 

@@ -1,9 +1,0 @@
-[Desktop Entry]
-Name=Pool Overlay
-Comment=Advanced pool game overlay
-Exec=/bin/bash -c "cd $(dirname %k) && ./run.sh"
-Terminal=false
-Type=Application
-Categories=Game;Utility;
-Icon=applications-games
-StartupNotify=true

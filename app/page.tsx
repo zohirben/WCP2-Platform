@@ -11,6 +11,7 @@ import {
 import { OfferCard } from "@/components/offer-card";
 import { ButtonCTA } from "@/components/ui/button-cta";
 import { ZellijPattern, MoroccanArchPattern } from "@/components/ui/pattern";
+import CustomZellijPattern from "@/components/ui/custom-zellij-pattern";
 import { CalendarCheck, Utensils, Building, Bus } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -24,8 +25,8 @@ export default function Home() {
   return (
     <div className={`${loaded ? "opacity-100" : "opacity-0"} transition-opacity duration-500`}>
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-[#2B6CB0] text-white">
-        <ZellijPattern className="opacity-5" />
+      <section className="relative overflow-hidden bg-moroccan-red text-white">
+        <CustomZellijPattern patternStyle="traditional" opacity={0.1} size="350px" />
         <div className="container mx-auto px-4 py-16 md:py-24 lg:py-32 flex flex-col lg:flex-row items-center gap-10 relative z-10">
           <div className="lg:w-1/2 space-y-6 animate-fadeInUp">
             <h1 className="font-amiri text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
@@ -38,7 +39,7 @@ export default function Home() {
               <ButtonCTA
                 href="/offers"
                 variant="outline"
-                className="bg-white text-[#2B6CB0] border-white hover:bg-transparent hover:text-white"
+                className="bg-white text-moroccan-red border-white hover:bg-transparent hover:text-white"
                 showArrow
               >
                 Explore Our Offers
@@ -46,7 +47,7 @@ export default function Home() {
               <ButtonCTA
                 href="/about"
                 variant="outline"
-                className="border-white text-white hover:bg-white hover:text-[#2B6CB0]"
+                className="border-white text-white hover:bg-white hover:text-moroccan-red"
               >
                 Learn More
               </ButtonCTA>
@@ -64,6 +65,7 @@ export default function Home() {
           </div>
         </div>
         <div className="absolute bottom-0 left-0 right-0 h-16 bg-white dark:bg-background" style={{ clipPath: "polygon(0 100%, 100% 100%, 100% 0, 0 100%)" }} />
+        <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-moroccan-red via-moroccan-sand to-moroccan-green opacity-70" />
       </section>
 
       {/* Quick Links */}

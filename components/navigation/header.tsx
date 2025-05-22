@@ -6,6 +6,7 @@ import { Trophy } from "lucide-react";
 import MainNav from "./main-nav";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
+import CustomZellijPattern from "../ui/custom-zellij-pattern";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -27,11 +28,15 @@ export default function Header() {
       className={cn(
         "sticky top-0 z-50 w-full transition-all duration-300",
         scrolled 
-          ? "bg-white/80 dark:bg-gray-950/80 backdrop-blur-md shadow-md py-3" 
+          ? "bg-white/80 bg-opacity-80 backdrop-blur-md shadow-md py-3 border-b border-moroccan-red/10" 
           : "bg-transparent py-5"
       )}
     >
-      <div className="absolute inset-0 pattern-overlay pointer-events-none" />
+      <CustomZellijPattern
+        imageUrl="/-2.jpg"
+        size="250px"
+        opacity={0.3}
+      />
       <div className="container mx-auto px-4 flex items-center justify-between relative">
         <Link href="/" className="flex items-center gap-2 group">
           <div className="flex items-center justify-center w-9 h-9 rounded-full bg-moroccan-red text-white transition-transform group-hover:scale-110">

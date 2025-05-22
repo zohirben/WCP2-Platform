@@ -13,6 +13,7 @@ export default function Footer() {
           backgroundImage: "url('/downloaded designs/Tarceeh 1-7-11imageOne.jpg')",
           backgroundRepeat: "repeat",
           backgroundSize: "400px",
+          imageRendering: "auto",
         }}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/30" />

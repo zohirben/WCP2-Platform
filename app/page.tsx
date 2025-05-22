@@ -54,7 +54,7 @@ export default function Home() {
               <ButtonCTA
                 href="/about"
                 variant="outline"
-                className="border-white text-white hover:bg-white hover:text-moroccan-red"
+                className="border-white bg-transparent text-white hover:bg-white hover:text-moroccan-red"
               >
                 Learn More
               </ButtonCTA>
@@ -156,8 +156,8 @@ export default function Home() {
               <div className="md:w-1/2 relative">
                 <div className="aspect-video relative">
                   <Image
-                    src="https://images.pexels.com/photos/3628912/pexels-photo-3628912.jpeg"
-                    alt="Stadium"
+                    src="/featured match.webp"
+                    alt="Featured World Cup Match"
                     fill
                     className="object-cover"
                   />
@@ -238,6 +238,7 @@ export default function Home() {
             backgroundImage: "url('/downloaded designs/Tarceeh 1-7-11imageOne.jpg')",
             backgroundRepeat: "repeat",
             backgroundSize: "400px",
+            imageRendering: "auto",
           }}
         />
         <div className="container mx-auto px-4 text-center relative z-10">
@@ -259,7 +260,7 @@ export default function Home() {
               <ButtonCTA
                 href="/contact"
                 variant="outline"
-                className="border-white text-white hover:bg-white hover:text-[#C53030]"
+                className="border-white bg-transparent text-white hover:bg-white hover:text-[#C53030]"
               >
                 Contact Us
               </ButtonCTA>

@@ -50,6 +50,7 @@ export default function ContactPage() {
             backgroundImage: "url('/downloaded designs/Tarceeh 1-7-11imageOne.jpg')",
             backgroundRepeat: "repeat",
             backgroundSize: "400px",
+            imageRendering: "auto",
           }}
         />
         <div className="container mx-auto px-4 relative z-10">

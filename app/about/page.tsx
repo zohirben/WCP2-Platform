@@ -59,8 +59,8 @@ export default function AboutPage() {
 
               <div className="my-8 relative rounded-xl overflow-hidden aspect-video">
                 <Image
-                  src="https://images.pexels.com/photos/12074973/pexels-photo-12074973.jpeg"
-                  alt="Moroccan Market"
+                  src="/mosque.jpg"
+                  alt="Beautiful Moroccan Mosque"
                   fill
                   className="object-cover"
                 />

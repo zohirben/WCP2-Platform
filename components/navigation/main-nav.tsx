@@ -13,15 +13,15 @@ export default function MainNav() {
 
   return (
     <nav className="flex items-center">
-      {/* This navigation is only used for mobile - desktop navigation is in header.tsx */}
-      <div className="hidden">
+      {/* Desktop Navigation */}
+      <div className="hidden lg:flex items-center gap-8">
         {NAV_LINKS.map((link) => (
           <Link
             key={link.href}
             href={link.href}
             className={cn(
-              "text-foreground/80 hover:text-foreground transition-colors relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-[#C53030] after:origin-center after:scale-x-0 after:transition-transform hover:after:scale-x-100",
-              pathname === link.href && "text-foreground after:scale-x-100 font-medium"
+              "text-foreground/80 hover:text-foreground transition-colors relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-moroccan-red after:origin-center after:scale-x-0 after:transition-transform hover:after:scale-x-100 font-medium",
+              pathname === link.href && "text-foreground after:scale-x-100 text-moroccan-red"
             )}
           >
             {link.label}
@@ -31,7 +31,7 @@ export default function MainNav() {
           href="/auth/login"
           className={buttonVariants({
             variant: "outline",
-            className: "border-[#C53030] text-[#C53030] hover:bg-[#C53030] hover:text-white transition-colors duration-300",
+            className: "border-moroccan-red text-moroccan-red hover:bg-moroccan-red hover:text-white transition-colors duration-300",
           })}
         >
           Login

@@ -36,6 +36,8 @@ export default function Header() {
         imageUrl="/zellij-2.jpg"
         size="200px"
         opacity={scrolled ? 0.05 : 0.1}
+        priority={true}
+        lazy={false}
       />
       <div className="container mx-auto px-4 flex items-center justify-between relative">
         <Link href="/" className="flex items-center gap-3 group">

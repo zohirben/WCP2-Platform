@@ -18,6 +18,8 @@ export default function PatternVisualizerPage() {
     { name: "Pattern 3", url: "/pattern-options/moroccan-zellij-pattern3.svg" },
     { name: "Traditional", url: "/pattern-options/moroccan-zellij-traditional.svg" },
     { name: "Subtle", url: "/pattern-options/moroccan-seamless-subtle.svg" },
+    { name: "Tarceeh", url: "/downloaded designs/Tarceeh 1-7-11imageOne.jpg" },
+    { name: "Geometric", url: "/downloaded designs/istockphoto-182416152-612x612.jpg" },
   ];
 
   return (

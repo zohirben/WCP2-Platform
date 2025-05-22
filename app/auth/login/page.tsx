@@ -34,7 +34,14 @@ export default function LoginPage() {
       
       {/* Right side - Image */}
       <div className="hidden lg:block w-1/2 bg-[#2B6CB0] relative overflow-hidden">
-        <ZellijPattern className="opacity-5" />
+        <div 
+          className="absolute inset-0 opacity-10 z-0 pointer-events-none"
+          style={{
+            backgroundImage: "url('/downloaded designs/Tarceeh 1-7-11imageOne.jpg')",
+            backgroundRepeat: "repeat",
+            backgroundSize: "400px",
+          }}
+        />
         <div className="absolute inset-0 z-10">
           <Image
             src="https://images.pexels.com/photos/3589903/pexels-photo-3589903.jpeg"

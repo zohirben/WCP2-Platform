@@ -9,7 +9,14 @@ export default function AboutPage() {
     <div>
       {/* Hero Section */}
       <section className="relative py-16 md:py-24 bg-[#2B6CB0] text-white overflow-hidden">
-        <ZellijPattern className="opacity-5" />
+        <div 
+          className="absolute inset-0 opacity-10 z-0 pointer-events-none"
+          style={{
+            backgroundImage: "url('/downloaded designs/Tarceeh 1-7-11imageOne.jpg')",
+            backgroundRepeat: "repeat",
+            backgroundSize: "400px",
+          }}
+        />
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="font-amiri text-4xl md:text-5xl font-bold mb-6">About Us</h1>
@@ -22,8 +29,8 @@ export default function AboutPage() {
       </section>
 
       {/* Main Content */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
+      <section className="py-16 relative overflow-hidden">
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto">
             <div className="prose prose-lg dark:prose-invert mx-auto">
               <h2 className="font-amiri text-3xl">Our Mission</h2>

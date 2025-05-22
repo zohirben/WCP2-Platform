@@ -18,7 +18,14 @@ export default function OffersPage() {
     <div>
       {/* Hero Section */}
       <section className="relative py-16 md:py-24 bg-[#C53030] text-white overflow-hidden">
-        <ZellijPattern className="opacity-5" />
+        <div 
+          className="absolute inset-0 opacity-10 z-0 pointer-events-none"
+          style={{
+            backgroundImage: "url('/pattern-options/moroccan-zellij-pattern1.svg')",
+            backgroundRepeat: "repeat",
+            backgroundSize: "400px",
+          }}
+        />
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="font-amiri text-4xl md:text-5xl font-bold mb-6">Our Offers</h1>
@@ -31,8 +38,8 @@ export default function OffersPage() {
       </section>
 
       {/* Main Tabs */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
+      <section className="py-16 relative overflow-hidden">
+        <div className="container mx-auto px-4 relative z-10">
           <Tabs defaultValue="matches" className="w-full">
             <TabsList className="w-full flex flex-wrap h-auto mb-8 border-b dark:border-gray-800 pb-0 bg-transparent">
               <TabsTrigger value="matches" className="data-[state=active]:border-b-2 data-[state=active]:border-[#C53030] rounded-none py-3 px-6 data-[state=active]:shadow-none data-[state=active]:bg-transparent">

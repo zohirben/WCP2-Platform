@@ -26,7 +26,7 @@ export default function Home() {
     <div className={`${loaded ? "opacity-100" : "opacity-0"} transition-opacity duration-500`}>
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-moroccan-red text-white">
-        <CustomZellijPattern patternStyle="traditional" opacity={0.1} size="350px" />
+        <CustomZellijPattern imageUrl="/zellij-2.jpg" opacity={0.1} size="350px" />
         <div className="container mx-auto px-4 py-16 md:py-24 lg:py-32 flex flex-col lg:flex-row items-center gap-10 relative z-10">
           <div className="lg:w-1/2 space-y-6 animate-fadeInUp">
             <h1 className="font-amiri text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
@@ -135,7 +135,11 @@ export default function Home() {
 
       {/* Featured Match */}
       <section className="py-16 bg-[#F7FAFC] dark:bg-gray-900 relative overflow-hidden">
-        <MoroccanArchPattern className="opacity-5" />
+        <CustomZellijPattern 
+          imageUrl="/zellij-2.jpg" 
+          opacity={0.1} 
+          size="350px" 
+        />
         <div className="container mx-auto px-4 relative z-10">
           <h2 className="section-title">
             Featured Match
@@ -221,7 +225,14 @@ export default function Home() {
 
       {/* CTA Section */}
       <section className="py-16 bg-[#C53030] text-white relative overflow-hidden">
-        <ZellijPattern className="opacity-5" />
+        <div 
+          className="absolute inset-0 opacity-10 z-0 pointer-events-none"
+          style={{
+            backgroundImage: "url('/downloaded designs/Tarceeh 1-7-11imageOne.jpg')",
+            backgroundRepeat: "repeat",
+            backgroundSize: "400px",
+          }}
+        />
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="max-w-2xl mx-auto animate-fadeInUp">
             <h2 className="font-amiri text-3xl md:text-4xl font-bold mb-6">

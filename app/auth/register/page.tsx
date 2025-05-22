@@ -34,7 +34,14 @@ export default function RegisterPage() {
       
       {/* Right side - Image */}
       <div className="hidden lg:block w-1/2 bg-[#C53030] relative overflow-hidden">
-        <ZellijPattern className="opacity-5" />
+        <div 
+          className="absolute inset-0 opacity-8 z-0 pointer-events-none"
+          style={{
+            backgroundImage: "url('/downloaded designs/istockphoto-182416152-612x612.jpg')",
+            backgroundRepeat: "repeat",
+            backgroundSize: "300px",
+          }}
+        />
         <div className="absolute inset-0 z-10">
           <Image
             src="https://images.pexels.com/photos/3952050/pexels-photo-3952050.jpeg"

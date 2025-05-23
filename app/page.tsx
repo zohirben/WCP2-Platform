@@ -92,9 +92,11 @@ export default function Home() {
               <p className="text-muted-foreground mb-4">
                 Find all World Cup matches happening in Morocco with dates, venues, and team information.
               </p>
-              <ButtonCTA href="/offers" variant="moroccan" className="w-full">
-                View Matches
-              </ButtonCTA>
+              <div className="mt-auto">
+                <ButtonCTA href="/offers" variant="moroccan" className="w-full">
+                  View Matches
+                </ButtonCTA>
+              </div>
             </div>
             
             <div className="moroccan-card animate-fadeInUp animate-delay-100">
@@ -105,9 +107,11 @@ export default function Home() {
               <p className="text-muted-foreground mb-4">
                 Discover authentic Moroccan cuisine and the best restaurants near match venues.
               </p>
-              <ButtonCTA href="/offers" variant="moroccan" className="w-full">
-                Find Restaurants
-              </ButtonCTA>
+              <div className="mt-auto">
+                <ButtonCTA href="/offers" variant="moroccan" className="w-full">
+                  Find Restaurants
+                </ButtonCTA>
+              </div>
             </div>
             
             <div className="moroccan-card animate-fadeInUp animate-delay-200">
@@ -118,9 +122,11 @@ export default function Home() {
               <p className="text-muted-foreground mb-4">
                 Browse hotels, riads, and lodging options that fit your budget and preferences.
               </p>
-              <ButtonCTA href="/offers" variant="moroccan" className="w-full">
-                Book Stays
-              </ButtonCTA>
+              <div className="mt-auto">
+                <ButtonCTA href="/offers" variant="moroccan" className="w-full">
+                  Book Stays
+                </ButtonCTA>
+              </div>
             </div>
             
             <div className="moroccan-card animate-fadeInUp animate-delay-300">
@@ -131,9 +137,11 @@ export default function Home() {
               <p className="text-muted-foreground mb-4">
                 Learn how to navigate Morocco with ease using trains, buses, and taxis.
               </p>
-              <ButtonCTA href="/offers" variant="moroccan" className="w-full">
-                Get Around
-              </ButtonCTA>
+              <div className="mt-auto">
+                <ButtonCTA href="/offers" variant="moroccan" className="w-full">
+                  Get Around
+                </ButtonCTA>
+              </div>
             </div>
           </div>
         </div>

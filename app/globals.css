@@ -107,9 +107,10 @@
   }
   
   .moroccan-card {
-    @apply border border-[#8A1538]/20 rounded-lg p-6 transition-all duration-300;
+    @apply border border-[#8A1538]/20 rounded-lg p-6 transition-all duration-300 flex flex-col h-full;
     background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.8));
     backdrop-filter: blur(10px);
+    min-height: 280px;
   }
   
   .moroccan-card:hover {

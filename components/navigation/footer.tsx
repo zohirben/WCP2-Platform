@@ -3,6 +3,7 @@ import { NAV_LINKS, SITE_CONFIG } from "@/lib/constants";
 import { buttonVariants } from "@/components/ui/button";
 import { Facebook, Instagram, Twitter } from "lucide-react";
 import { MoroccanArchPattern } from "../ui/pattern";
+import { TikTok } from "../ui/tiktok-icon";
 
 export default function Footer() {
   return (
@@ -57,6 +58,17 @@ export default function Footer() {
               >
                 <Instagram size={20} />
                 <span className="sr-only">Instagram</span>
+              </Link>
+              <Link 
+                href="#" 
+                className={buttonVariants({ 
+                  variant: "ghost", 
+                  size: "icon", 
+                  className: "rounded-full bg-white/10 hover:bg-white/20 text-white transition-transform hover:scale-110" 
+                })}
+              >
+                <TikTok size={20} />
+                <span className="sr-only">TikTok</span>
               </Link>
             </div>
           </div>

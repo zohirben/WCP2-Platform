@@ -41,7 +41,9 @@ The application will be available at `http://localhost:3000`
 
 ### For Developers
 - [Developer Guide](/docs/developer-guide.md) - Comprehensive technical documentation for developers
+- [Guide du Développeur](/docs/developer-guide-fr.md) - Documentation technique complète pour les développeurs (Français)
 - [Zellij Pattern System](/docs/zellij-pattern-system.md) - Documentation for the Moroccan geometric patterns implementation
 
 ### For Users
 - [User Guide](/docs/user-guide.md) - End-user manual for platform navigation and feature usage
+- [Guide d'Utilisateur](/docs/user-guide-fr.md) - Manuel d'utilisation pour la navigation et l'utilisation des fonctionnalités (Français)

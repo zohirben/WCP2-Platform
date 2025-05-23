@@ -216,7 +216,7 @@ export default function Home() {
           <p className="text-muted-foreground max-w-2xl mb-12">
             Experience the best of Morocco's rich culture, exquisite cuisine, and stunning landscapes on your Moroccan adventure.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <OfferCard
               title="Traditional Cuisine"
               description="Taste authentic Moroccan flavors and dishes at recommended restaurants near match venues."
@@ -232,6 +232,14 @@ export default function Home() {
               ctaText="Browse Hotels"
               ctaHref="/offers"
               className="animate-fadeInUp animate-delay-100"
+            />
+            <OfferCard
+              title="Transportation Services"
+              description="Navigate Morocco with ease using our guide to local transportation options and services."
+              imageSrc="/public transportation.webp"
+              ctaText="View Transportation"
+              ctaHref="/offers"
+              className="animate-fadeInUp animate-delay-200"
             />
           </div>
         </div>

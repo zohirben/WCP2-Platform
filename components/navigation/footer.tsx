@@ -21,9 +21,9 @@ export default function Footer() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-10">
           <div>
-            <h3 className="font-amiri text-2xl font-bold mb-4">World Cup Morocco</h3>
+            <h3 className="font-amiri text-2xl font-bold mb-4">Moroccan Experience</h3>
             <p className="text-white/80 mb-4">
-              Your essential travel companion for the World Cup in Morocco. Discover the beauty of Morocco while enjoying the beautiful game.
+              Your essential travel companion for an authentic Moroccan experience. Discover the beauty and rich culture of Morocco.
             </p>
             <div className="flex gap-4">
               <Link 
@@ -130,7 +130,7 @@ export default function Footer() {
           <div>
             <h4 className="font-amiri text-xl font-bold mb-4">Contact</h4>
             <address className="not-italic text-white/80 space-y-3">
-              <p>Email: info@worldcup-morocco.com</p>
+              <p>Email: info@moroccan-experience.com</p>
               <p>Phone: +212 5XX-XXXXXX</p>
               <p>Address: Casablanca, Morocco</p>
             </address>
@@ -139,7 +139,7 @@ export default function Footer() {
         
         <div className="border-t border-white/20 py-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-white/70 text-sm">
-            &copy; {new Date().getFullYear()} World Cup Morocco. All rights reserved.
+            &copy; {new Date().getFullYear()} Moroccan Experience. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm text-white/70">
             <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>

@@ -1,7 +1,7 @@
 export const SITE_CONFIG = {
-  name: "World Cup Morocco",
-  description: "Your essential travel companion for the World Cup in Morocco",
-  url: "https://worldcup-morocco.com",
+  name: "Moroccan Experience",
+  description: "Your essential travel companion for an authentic Moroccan experience",
+  url: "https://moroccan-experience.com",
   ogImage: "https://images.pexels.com/photos/3952050/pexels-photo-3952050.jpeg",
 };
 
@@ -12,7 +12,7 @@ export const NAV_LINKS = [
   { href: "/contact", label: "Contact" },
 ];
 
-export const PLACEHOLDER_MATCHES = [
+export const PLACEHOLDER_SITES = [
   {
     id: 1,
     team1: "Morocco",

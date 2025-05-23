@@ -21,7 +21,7 @@ export default function AboutPage() {
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="font-amiri text-4xl md:text-5xl font-bold mb-6">About Us</h1>
             <p className="text-lg opacity-90">
-              Help visitors enjoy the World Cup in Morocco while discovering local hospitality.
+              Help visitors discover and enjoy the authentic Moroccan experience with local hospitality.
             </p>
           </div>
         </div>
@@ -35,7 +35,7 @@ export default function AboutPage() {
             <div className="prose prose-lg dark:prose-invert mx-auto">
               <h2 className="font-amiri text-3xl">Our Mission</h2>
               <p>
-                Welcome to the official World Cup Morocco Travel Companion website. Our mission is to help international visitors navigate and enjoy their time in Morocco during the World Cup. We believe that experiencing a country's culture is just as important as watching the matches.
+                Welcome to the Moroccan Experience website. Our mission is to help international visitors navigate and enjoy their time in Morocco. We believe that experiencing Morocco's rich culture is essential to truly understanding this magnificent country.
               </p>
 
               <div className="my-8 relative rounded-xl overflow-hidden aspect-video">
@@ -49,12 +49,12 @@ export default function AboutPage() {
 
               <h2 className="font-amiri text-3xl">What We Offer</h2>
               <p>
-                We provide comprehensive information on match schedules, recommended restaurants serving authentic Moroccan cuisine, a variety of accommodation options, and detailed transportation guides. Our goal is to make your World Cup experience in Morocco as smooth and enjoyable as possible.
+                We provide comprehensive information on cultural landmarks, recommended restaurants serving authentic Moroccan cuisine, a variety of accommodation options, and detailed transportation guides. Our goal is to make your Moroccan experience as smooth and enjoyable as possible.
               </p>
 
               <h2 className="font-amiri text-3xl">Cultural Immersion</h2>
               <p>
-                Beyond the excitement of the matches, we encourage visitors to immerse themselves in Morocco's rich culture. From the bustling souks of Marrakech to the serene beaches of Essaouira, our guides help you discover the hidden gems of this beautiful country.
+                We encourage visitors to immerse themselves in Morocco's rich culture. From the bustling souks of Marrakech to the serene beaches of Essaouira, from the ancient medinas to the majestic Atlas Mountains, our guides help you discover the hidden gems of this beautiful country.
               </p>
 
               <div className="my-8 relative rounded-xl overflow-hidden aspect-video">

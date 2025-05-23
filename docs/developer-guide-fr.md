@@ -1,8 +1,8 @@
-# Plateforme de la Coupe du Monde au Maroc - Documentation pour Développeurs
+# Expérience Marocaine - Documentation pour Développeurs
 
 ## Aperçu
 
-La Plateforme de la Coupe du Monde au Maroc est une application web complète construite avec Next.js qui fournit des informations sur l'événement de la Coupe du Monde au Maroc, y compris les matchs, les hébergements, les restaurants et les options de transport. Ce document sert de guide pour les développeurs travaillant sur ou maintenant la plateforme.
+L'Expérience Marocaine est une application web complète construite avec Next.js qui fournit des informations sur le Maroc, y compris les sites culturels, les hébergements, les restaurants et les options de transport. Ce document sert de guide pour les développeurs travaillant sur ou maintenant la plateforme.
 
 ## Table des Matières
 

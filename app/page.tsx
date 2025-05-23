@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { 
-  PLACEHOLDER_MATCHES, 
+  PLACEHOLDER_SITES, 
   PLACEHOLDER_RESTAURANTS, 
   PLACEHOLDER_HOTELS, 
   PLACEHOLDER_TRANSPORT 
@@ -12,7 +12,7 @@ import { OfferCard } from "@/components/offer-card";
 import { ButtonCTA } from "@/components/ui/button-cta";
 import { ZellijPattern, MoroccanArchPattern } from "@/components/ui/pattern";
 import CustomZellijPattern from "@/components/ui/custom-zellij-pattern";
-import { CalendarCheck, Utensils, Building, Bus } from "lucide-react";
+import { CalendarCheck, Utensils, Building, Bus, MapPin } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -37,10 +37,10 @@ export default function Home() {
         <div className="container mx-auto px-4 py-16 md:py-24 lg:py-32 flex flex-col lg:flex-row items-center gap-10 relative z-10">
           <div className="lg:w-1/2 space-y-6 animate-fadeInUp">
             <h1 className="font-amiri text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              Welcome to Morocco – Your World Cup Guide
+              Welcome to Your Moroccan Experience
             </h1>
             <p className="text-lg opacity-90 max-w-xl">
-              Experience the magic of Morocco while enjoying the beautiful game. Your complete guide to matches, food, accommodation, and transportation.
+              Discover the magic of Morocco with our comprehensive guide to the authentic Moroccan experience, food, accommodation, and transportation.
             </p>
             <div className="flex flex-wrap gap-4 pt-2">
               <ButtonCTA
@@ -63,7 +63,7 @@ export default function Home() {
           <div className="lg:w-1/2 relative h-[300px] md:h-[400px] lg:h-[500px] rounded-xl overflow-hidden animate-fadeInUp animate-delay-200">
             <Image
               src="https://images.pexels.com/photos/2846217/pexels-photo-2846217.jpeg"
-              alt="Morocco World Cup"
+              alt="Moroccan Experience"
               fill
               className="object-cover"
               priority
@@ -80,9 +80,8 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <h2 className="section-title text-center mx-auto">
             Essential Information
-          </h2>
-          <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-12">
-            Everything you need to make the most of your World Cup experience in Morocco.
+          </h2>            <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-12">
+            Everything you need to make the most of your Moroccan experience.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
             <div className="moroccan-card animate-fadeInUp">
@@ -91,7 +90,7 @@ export default function Home() {
               </div>
               <h3 className="font-amiri text-xl font-bold mb-2">Match Schedule</h3>
               <p className="text-muted-foreground mb-4">
-                Find the complete World Cup schedule with venues, dates, and ticket information.
+                Find all World Cup matches happening in Morocco with dates, venues, and team information.
               </p>
               <ButtonCTA href="/offers" variant="moroccan" className="w-full">
                 View Matches
@@ -149,7 +148,7 @@ export default function Home() {
         />
         <div className="container mx-auto px-4 relative z-10">
           <h2 className="section-title">
-            Featured Match
+            Featured Destination
           </h2>
           <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden animate-fadeInUp">
             <div className="md:flex">
@@ -157,7 +156,7 @@ export default function Home() {
                 <div className="aspect-video relative">
                   <Image
                     src="/featured match.webp"
-                    alt="Featured World Cup Match"
+                    alt="Featured Moroccan Destination"
                     fill
                     className="object-cover"
                   />
@@ -165,30 +164,30 @@ export default function Home() {
               </div>
               <div className="p-6 md:p-8 md:w-1/2">
                 <div className="font-amiri text-xl mb-2 flex justify-between">
-                  <span>{PLACEHOLDER_MATCHES[0].date}</span>
-                  <span>{PLACEHOLDER_MATCHES[0].time}</span>
+                  <span>{PLACEHOLDER_SITES[0].date}</span>
+                  <span>{PLACEHOLDER_SITES[0].time}</span>
                 </div>
                 <div className="flex items-center justify-center gap-4 my-6">
                   <div className="text-center">
                     <div className="w-16 h-16 bg-[#C53030] rounded-full flex items-center justify-center text-white text-lg font-bold mb-2">
                       MAR
                     </div>
-                    <span className="font-bold">{PLACEHOLDER_MATCHES[0].team1}</span>
+                    <span className="font-bold">{PLACEHOLDER_SITES[0].team1}</span>
                   </div>
                   <div className="text-2xl font-bold">VS</div>
                   <div className="text-center">
                     <div className="w-16 h-16 bg-[#2B6CB0] rounded-full flex items-center justify-center text-white text-lg font-bold mb-2">
                       BRA
                     </div>
-                    <span className="font-bold">{PLACEHOLDER_MATCHES[0].team2}</span>
+                    <span className="font-bold">{PLACEHOLDER_SITES[0].team2}</span>
                   </div>
                 </div>
                 <div className="border-t border-gray-200 dark:border-gray-700 pt-4">
                   <p className="text-muted-foreground mb-2">
-                    <strong>Stadium:</strong> {PLACEHOLDER_MATCHES[0].stadium}
+                    <strong>Stadium:</strong> {PLACEHOLDER_SITES[0].stadium}
                   </p>
                   <p className="text-muted-foreground mb-4">
-                    <strong>City:</strong> {PLACEHOLDER_MATCHES[0].city}
+                    <strong>City:</strong> {PLACEHOLDER_SITES[0].city}
                   </p>
                   <ButtonCTA href="/offers" variant="moroccan" showArrow>
                     View All Matches
@@ -207,7 +206,7 @@ export default function Home() {
             Discover Morocco
           </h2>
           <p className="text-muted-foreground max-w-2xl mb-12">
-            Experience the best of Morocco's rich culture, exquisite cuisine, and stunning landscapes while attending the World Cup.
+            Experience the best of Morocco's rich culture, exquisite cuisine, and stunning landscapes on your Moroccan adventure.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <OfferCard
@@ -244,7 +243,7 @@ export default function Home() {
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="max-w-2xl mx-auto animate-fadeInUp">
             <h2 className="font-amiri text-3xl md:text-4xl font-bold mb-6">
-              Ready for an Unforgettable World Cup Experience?
+              Ready for an Unforgettable Moroccan Experience?
             </h2>
             <p className="text-lg opacity-90 mb-8">
               Create your personalized guide by signing up. Get exclusive updates, customized itineraries, and local insights.

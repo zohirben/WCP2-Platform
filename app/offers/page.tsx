@@ -1,7 +1,7 @@
 "use client";
 
 import { 
-  PLACEHOLDER_MATCHES, 
+  PLACEHOLDER_SITES, 
   PLACEHOLDER_RESTAURANTS, 
   PLACEHOLDER_HOTELS, 
   PLACEHOLDER_TRANSPORT 
@@ -30,7 +30,7 @@ export default function OffersPage() {
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="font-amiri text-4xl md:text-5xl font-bold mb-6">Our Offers</h1>
             <p className="text-lg opacity-90">
-              Discover our comprehensive World Cup services to make your Moroccan experience unforgettable.
+              Discover our comprehensive travel services to make your Moroccan experience unforgettable.
             </p>
           </div>
         </div>
@@ -64,11 +64,11 @@ export default function OffersPage() {
             <TabsContent value="matches" className="mt-6">
               <h2 className="section-title">Match Schedule</h2>
               <p className="text-muted-foreground mb-8 max-w-3xl">
-                Find the complete World Cup schedule with all the matches happening across Moroccan stadiums. Plan your visit to catch your favorite teams in action.
+                Find the complete match schedule with all the matches happening across Moroccan stadiums. Plan your visit to catch your favorite teams in action.
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {PLACEHOLDER_MATCHES.map((match) => (
+                {PLACEHOLDER_SITES.map((match) => (
                   <Card key={match.id} className="overflow-hidden border-border/50 transition-all hover:shadow-md">
                     <CardHeader className="bg-[#2B6CB0] text-white pb-4">
                       <div className="flex justify-between items-center">

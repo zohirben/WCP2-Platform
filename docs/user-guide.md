@@ -1,8 +1,10 @@
-# World Cup Morocco Platform - User Guide
+# Moroccan Experience - User Guide
 
-## Welcome to the World Cup Morocco Platform!
+## Welcome to the Moroccan Experience Platform!
 
-This guide will help you navigate and make the most of your World Cup experience in Morocco. Whether you're looking for match information, restaurant recommendations, accommodation options, or transportation details, everything you need is just a few clicks away.
+This guide will help you navigate and make the most of your Moroccan experience. Whether you're looking for cultural landmarks, restaurant recommendations, accommodation options, or transportation details, everything you need is just a few clicks away.
+
+This guide will help you navigate and make the most of your Moroccan experience. Whether you're looking for cultural landmarks, restaurant recommendations, accommodation options, or transportation details, everything you need is just a few clicks away.
 
 ## Table of Contents
 
@@ -21,7 +23,7 @@ This guide will help you navigate and make the most of your World Cup experience
 
 ### Accessing the Platform
 
-The World Cup Morocco Platform is a web application that can be accessed from any device with an internet connection. Simply open your preferred web browser and navigate to the platform URL.
+The Moroccan Experience Platform is a web application that can be accessed from any device with an internet connection. Simply open your preferred web browser and navigate to the platform URL.
 
 ### Navigation Basics
 
@@ -40,7 +42,7 @@ The platform features an intuitive navigation system:
 To view the complete World Cup match schedule:
 
 1. Click on **Offers** in the main navigation menu
-2. Navigate to the **Matches** section
+2. Navigate to the **Match Schedule** section
 3. Browse matches by date, venue, or team
 
 Each match listing includes:

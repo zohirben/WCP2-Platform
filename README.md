@@ -1,10 +1,10 @@
-# World Cup Morocco Platform
+# Moroccan Experience Platform
 
-A comprehensive platform for the World Cup in Morocco, providing information about matches, accommodations, restaurants, and transportation options.
+A comprehensive platform providing information about Moroccan culture, accommodations, restaurants, and transportation options for travelers.
 
 ## Overview
 
-The World Cup Morocco Platform is a Next.js application that showcases Moroccan culture and provides essential information for World Cup visitors. The platform features a distinctive design inspired by traditional Moroccan geometric patterns (zellij) and uses a color scheme based on the Moroccan flag.
+The Moroccan Experience platform is a Next.js application that showcases Moroccan culture and provides essential information for visitors. The platform features a distinctive design inspired by traditional Moroccan geometric patterns (zellij) and uses a color scheme based on the Moroccan flag.
 
 ## Quickstart
 
@@ -18,7 +18,7 @@ The World Cup Morocco Platform is a Next.js application that showcases Moroccan 
 ```bash
 # Clone the repository
 git clone [repository-url]
-cd WCP2-Platform
+cd moroccan-experience
 
 # Install dependencies
 npm install
@@ -32,7 +32,7 @@ The application will be available at `http://localhost:3000`
 ## Features
 
 - Responsive design with Moroccan-inspired visual elements
-- Match schedules and venue information
+- Cultural landmarks and points of interest
 - Restaurant and accommodation recommendations
 - Transportation options and booking resources
 - User authentication system

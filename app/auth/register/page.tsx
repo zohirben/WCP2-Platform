@@ -17,14 +17,14 @@ export default function RegisterPage() {
               <Trophy size={20} />
             </div>
             <span className="font-amiri text-xl md:text-2xl font-bold">
-              World Cup Morocco
+              Moroccan Experience
             </span>
           </Link>
           
           <div className="mb-6">
             <h1 className="font-amiri text-3xl font-bold mb-2">Create an account</h1>
             <p className="text-muted-foreground">
-              Sign up to get personalized World Cup recommendations and save your favorite places.
+              Sign up to get personalized Moroccan travel recommendations and save your favorite places.
             </p>
           </div>
           
@@ -54,7 +54,7 @@ export default function RegisterPage() {
         <div className="absolute inset-0 flex items-center justify-center z-20">
           <div className="text-center text-white p-8 max-w-lg">
             <h2 className="font-amiri text-4xl font-bold mb-4">
-              Join the World Cup Experience
+              Join the Moroccan Experience
             </h2>
             <p className="text-white/90 text-lg">
               Create an account to unlock exclusive features and personalized recommendations for your Moroccan adventure.

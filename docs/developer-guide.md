@@ -1,8 +1,8 @@
-# World Cup Morocco Platform - Developer Documentation
+# Moroccan Experience - Developer Documentation
 
 ## Overview
 
-The World Cup Morocco Platform is a comprehensive web application built with Next.js that provides information about the World Cup event in Morocco, including matches, accommodations, restaurants, and transportation options. This document serves as a guide for developers working on or maintaining the platform.
+The Moroccan Experience is a comprehensive web application built with Next.js that provides information about Morocco, including cultural landmarks, accommodations, restaurants, and transportation options. This document serves as a guide for developers working on or maintaining the platform.
 
 ## Table of Contents
 

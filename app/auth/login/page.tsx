@@ -17,14 +17,14 @@ export default function LoginPage() {
               <Trophy size={20} />
             </div>
             <span className="font-amiri text-xl md:text-2xl font-bold">
-              World Cup Morocco
+              Moroccan Experience
             </span>
           </Link>
           
           <div className="mb-6">
             <h1 className="font-amiri text-3xl font-bold mb-2">Welcome back</h1>
             <p className="text-muted-foreground">
-              Sign in to your account to access your personalized World Cup Morocco guide.
+              Sign in to your account to access your personalized Moroccan Experience guide.
             </p>
           </div>
           
@@ -57,7 +57,7 @@ export default function LoginPage() {
               Discover the Magic of Morocco
             </h2>
             <p className="text-white/90 text-lg">
-              Your complete guide to the World Cup experience in one of the world's most vibrant and welcoming countries.
+              Your complete guide to an authentic Moroccan experience in one of the world&apos;s most vibrant and welcoming countries.
             </p>
           </div>
         </div>

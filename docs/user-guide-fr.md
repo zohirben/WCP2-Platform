@@ -1,13 +1,13 @@
-# Plateforme de la Coupe du Monde au Maroc - Guide d'Utilisateur
+# Expérience Marocaine - Guide d'Utilisateur
 
-## Bienvenue sur la Plateforme de la Coupe du Monde au Maroc !
+## Bienvenue sur la Plateforme d'Expérience Marocaine !
 
-Ce guide vous aidera à naviguer et à profiter au maximum de votre expérience de la Coupe du Monde au Maroc. Que vous recherchiez des informations sur les matchs, des recommandations de restaurants, des options d'hébergement ou des détails sur les transports, tout ce dont vous avez besoin est à quelques clics.
+Ce guide vous aidera à naviguer et à profiter au maximum de votre expérience au Maroc. Que vous recherchiez des informations sur les sites culturels, des recommandations de restaurants, des options d'hébergement ou des détails sur les transports, tout ce dont vous avez besoin est à quelques clics.
 
 ## Table des Matières
 
 1. [Premiers Pas](#premiers-pas)
-2. [Trouver des Informations sur les Matchs](#trouver-des-informations-sur-les-matchs)
+2. [Trouver des Sites Culturels](#trouver-des-sites-culturels)
 3. [Explorer les Options de Restauration](#explorer-les-options-de-restauration)
 4. [Trouver un Hébergement](#trouver-un-hébergement)
 5. [Guide de Transport](#guide-de-transport)
@@ -21,7 +21,7 @@ Ce guide vous aidera à naviguer et à profiter au maximum de votre expérience 
 
 ### Accéder à la Plateforme
 
-La Plateforme de la Coupe du Monde au Maroc est une application web accessible depuis n'importe quel appareil disposant d'une connexion internet. Ouvrez simplement votre navigateur web préféré et naviguez vers l'URL de la plateforme.
+La Plateforme d'Expérience Marocaine est une application web accessible depuis n'importe quel appareil disposant d'une connexion internet. Ouvrez simplement votre navigateur web préféré et naviguez vers l'URL de la plateforme.
 
 ### Bases de Navigation
 

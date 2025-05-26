@@ -37,7 +37,7 @@ export default function RegisterPage() {
         <div 
           className="absolute inset-0 opacity-8 z-0 pointer-events-none animate-pattern-float"
           style={{
-            backgroundImage: "url('/downloaded designs/istockphoto-182416152-612x612.jpg')",
+            backgroundImage: "url('/assets/patterns/istockphoto-182416152-612x612.jpg')",
             backgroundRepeat: "repeat",
             backgroundSize: "300px",
           }}

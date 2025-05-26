@@ -6,7 +6,7 @@ This document provides detailed information about the zellij pattern system impl
 
 The zellij pattern system adds authentic Moroccan visual elements to the platform through traditional geometric patterns. These patterns are implemented as background elements that enhance the visual appeal while maintaining functionality.
 
-![Zellij Pattern Example](/zellij-2.jpg)
+![Zellij Pattern Example](/assets/images/zellij-2.jpg)
 
 ## Components
 
@@ -18,7 +18,7 @@ A reusable React component for displaying consistent zellij patterns across the 
 
 ```jsx
 <CustomZellijPattern
-  imageUrl="/zellij-2.jpg"  // Path to the pattern image
+  imageUrl="/assets/images/zellij-2.jpg"  // Path to the pattern image
   size="250px"              // Size of pattern tiles
   opacity={0.3}             // Transparency level
   className="your-custom-class" // Optional additional classes
@@ -29,7 +29,7 @@ A reusable React component for displaying consistent zellij patterns across the 
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `imageUrl` | string | "/zellij-2.jpg" | Path to the pattern image (from public folder) |
+| `imageUrl` | string | "/assets/images/zellij-2.jpg" | Path to the pattern image (from public folder) |
 | `size` | string | "250px" | Size of the pattern tiles |
 | `opacity` | number | 0.3 | Pattern opacity (0-1) |
 | `className` | string | "" | Additional CSS classes |
@@ -51,8 +51,8 @@ Access at: [http://localhost:3000/pattern-visualizer](http://localhost:3000/patt
 The platform includes several zellij patterns:
 
 1. **Main patterns:**
-   - `/public/zellij-2.jpg` - Current header pattern (reddish)
-   - `/public/zellij-tile.jpg` - Alternative pattern
+   - `/public/assets/images/zellij-2.jpg` - Current header pattern (reddish)
+   - `/public/assets/images/zellij-tile.jpg` - Alternative pattern
 
 2. **Additional options:**
    - `/public/pattern-options/moroccan-zellij-pattern1.svg` - Star-based pattern
@@ -102,7 +102,7 @@ export default function Header() {
   return (
     <header className="...">
       <CustomZellijPattern 
-        imageUrl="/zellij-2.jpg"
+        imageUrl="/assets/images/zellij-2.jpg"
         size="250px"
         opacity={0.3}
       />

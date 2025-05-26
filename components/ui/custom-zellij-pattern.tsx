@@ -55,7 +55,7 @@ interface CustomZellijPatternProps {
 }
 export default function CustomZellijPattern({
   className = "",
-  imageUrl = "/zellij-2.jpg",
+  imageUrl = "/assets/images/zellij-2.jpg",
   size = "250px",
   opacity = 0.3,
   lazy = true,

@@ -5,21 +5,21 @@ import CustomZellijPattern from "@/components/ui/custom-zellij-pattern";
 import { ZellijPattern } from "@/components/ui/pattern";
 
 export default function PatternVisualizerPage() {
-  const [selectedPattern, setSelectedPattern] = useState<string>("/zellij-2.jpg");
+  const [selectedPattern, setSelectedPattern] = useState<string>("/assets/images/zellij-2.jpg");
   const [patternSize, setPatternSize] = useState<string>("250px");
   const [opacity, setOpacity] = useState<number>(0.3);
   const [backgroundColor, setBackgroundColor] = useState<string>("#ffffff");
 
   const patterns = [
-    { name: "Zellij 2", url: "/zellij-2.jpg" },
-    { name: "Zellij Tile", url: "/zellij-tile.jpg" },
+    { name: "Zellij 2", url: "/assets/images/zellij-2.jpg" },
+    { name: "Zellij Tile", url: "/assets/images/zellij-tile.jpg" },
     { name: "Pattern 1", url: "/pattern-options/moroccan-zellij-pattern1.svg" },
     { name: "Pattern 2", url: "/pattern-options/moroccan-zellij-pattern2.svg" },
     { name: "Pattern 3", url: "/pattern-options/moroccan-zellij-pattern3.svg" },
     { name: "Traditional", url: "/pattern-options/moroccan-zellij-traditional.svg" },
     { name: "Subtle", url: "/pattern-options/moroccan-seamless-subtle.svg" },
-    { name: "Tarceeh", url: "/downloaded designs/Tarceeh 1-7-11imageOne.jpg" },
-    { name: "Geometric", url: "/downloaded designs/istockphoto-182416152-612x612.jpg" },
+    { name: "Tarceeh", url: "/assets/patterns/Tarceeh 1-7-11imageOne.jpg" },
+    { name: "Geometric", url: "/assets/patterns/istockphoto-182416152-612x612.jpg" },
   ];
 
   return (

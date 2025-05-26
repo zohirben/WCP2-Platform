@@ -12,7 +12,7 @@ export default function AboutPage() {
         <div 
           className="absolute inset-0 opacity-10 z-0 pointer-events-none animate-pattern-float"
           style={{
-            backgroundImage: "url('/downloaded designs/Tarceeh 1-7-11imageOne.jpg')",
+            backgroundImage: "url('/assets/patterns/Tarceeh 1-7-11imageOne.jpg')",
             backgroundRepeat: "repeat",
             backgroundSize: "400px",
           }}
@@ -59,7 +59,7 @@ export default function AboutPage() {
 
               <div className="my-8 relative rounded-xl overflow-hidden aspect-video">
                 <Image
-                  src="/mosque.jpg"
+                  src="/assets/images/mosque.jpg"
                   alt="Beautiful Moroccan Mosque"
                   fill
                   className="object-cover"

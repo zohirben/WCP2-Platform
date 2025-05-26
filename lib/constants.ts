@@ -62,7 +62,7 @@ export const PLACEHOLDER_RESTAURANTS = [
     cuisine: "Traditional Moroccan",
     description: "Authentic Moroccan dining in a historic riad setting",
     location: "Marrakech",
-    image: "/tajine.jpg",
+    image: "/assets/images/tajine.jpg",
     rating: 4.8,
   },
   {
@@ -100,7 +100,7 @@ export const PLACEHOLDER_HOTELS = [
     name: "Royal Mansour",
     description: "Luxury riad-style accommodation with private courtyards",
     location: "Marrakech",
-    image: "/luxury.avif",
+    image: "/assets/images/luxury.avif",
     price: "$$$$$",
     amenities: ["Spa", "Pool", "5-Star Restaurant", "Butler Service"],
   },

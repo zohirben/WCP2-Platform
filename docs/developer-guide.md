@@ -53,7 +53,7 @@ WCP2-Platform/
 ├── hooks/                  # Custom React hooks
 ├── lib/                    # Utility functions, constants, and configuration
 ├── public/                 # Static assets
-│   └── downloaded designs/ # Pattern images and design resources
+│   └── assets/patterns/ # Pattern images and design resources
 └── tailwind.config.ts      # Tailwind configuration with custom theme
 ```
 
@@ -175,7 +175,7 @@ Patterns use the `pattern-float` animation for subtle movement:
 <div 
   className="absolute inset-0 opacity-10 z-0 pointer-events-none animate-pattern-float"
   style={{
-    backgroundImage: "url('/downloaded designs/Tarceeh 1-7-11imageOne.jpg')",
+    backgroundImage: "url('/assets/patterns/Tarceeh 1-7-11imageOne.jpg')",
     backgroundRepeat: "repeat",
     backgroundSize: "400px",
     imageRendering: "auto",

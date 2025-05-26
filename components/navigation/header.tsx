@@ -33,7 +33,7 @@ export default function Header() {
       )}
     >
       <CustomZellijPattern
-        imageUrl="/zellij-2.jpg"
+        imageUrl="/assets/images/zellij-2.jpg"
         size="200px"
         opacity={scrolled ? 0.05 : 0.1}
         priority={true}

@@ -169,6 +169,15 @@
   }
 }
 
+@keyframes patternFloat {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: 400px 400px;
+  }
+}
+
 .animate-fadeInUp {
   animation: fadeInUp 0.6s ease-out forwards;
 }
@@ -187,14 +196,14 @@
 
 /* Enhanced geometric patterns */
 .geometric-overlay {
-  background-image: url('https://images.pexels.com/photos/6447217/pexels-photo-6447217.jpeg');
+  background-image: url('/assets/patterns/Tarceeh 1-7-11imageOne.jpg');
   background-size: cover;
   background-position: center;
   opacity: 0.1;
 }
 
 .pattern-overlay {
-  background-image: url('https://images.pexels.com/photos/6447217/pexels-photo-6447217.jpeg');
+  background-image: url('/assets/patterns/istockphoto-182416152-612x612.jpg');
   background-size: 200px;
   opacity: 0.05;
   mix-blend-mode: multiply;

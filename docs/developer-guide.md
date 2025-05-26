@@ -10,12 +10,14 @@ The Moroccan Experience is a comprehensive web application built with Next.js th
 2. [Project Structure](#project-structure)
 3. [Core Components](#core-components)
 4. [Design System](#design-system)
-5. [Pattern System](#pattern-system)
-6. [Authentication Flow](#authentication-flow)
-7. [Adding New Features](#adding-new-features)
-8. [Best Practices](#best-practices)
-9. [Deployment Guidelines](#deployment-guidelines)
-10. [Troubleshooting](#troubleshooting)
+5. [Interactive Chatbot System](#interactive-chatbot-system)
+6. [Pattern System](#pattern-system)
+7. [Authentication Flow](#authentication-flow)
+8. [Adding New Features](#adding-new-features)
+9. [Best Practices](#best-practices)
+10. [Deployment Guidelines](#deployment-guidelines)
+11. [Troubleshooting](#troubleshooting)
+12. [Additional Documentation](#additional-documentation)
 
 ---
 
@@ -72,6 +74,8 @@ Key UI components include:
 - **ButtonCTA**: Custom call-to-action button with Moroccan styling
 - **Card**: Content container with consistent styling
 - **Pattern Components**: Components for rendering Moroccan geometric patterns
+- **ChatbotButton**: Interactive floating action button for accessing the chatbot
+- **ChatModal**: Modal component displaying information about Moroccan cities and prices
 
 ### Navigation Components
 
@@ -119,6 +123,38 @@ Example usage:
 ```tsx
 <div className="animate-geometric-reveal">Content</div>
 ```
+
+---
+
+## Interactive Chatbot System
+
+The platform includes an interactive chatbot to help World Cup visitors learn about Moroccan cities and travel costs.
+
+### Chatbot Components
+
+- **ChatbotButton** (`components/ui/chatbot-button.tsx`): A floating action button that shows/hides the chat interface
+- **ChatModal** (`components/ui/chat-modal.tsx`): The chat interface with city information and user interaction
+
+### City Information Database
+
+The chatbot uses a structured database of city information stored directly in the component:
+
+```tsx
+const cityInfo = {
+  marrakech: {
+    hotels: "Hotels in Marrakech range from $50-100/night for budget options to $200-500/night for luxury riads.",
+    restaurants: "Meals range from $5-15 at local eateries to $30-70 at upscale restaurants.",
+    attractions: "Main attractions include Jardin Majorelle ($8), Bahia Palace ($3), and Medina markets (free entry)."
+  },
+  // Other cities...
+}
+```
+
+### How to Extend the Chatbot
+
+1. **Add New Cities**: Add more city objects to the `cityInfo` constant
+2. **Add New Categories**: Extend city objects with additional information categories
+3. **Customize Questions**: Modify the predefined questions array to add more options
 
 ---
 
@@ -359,6 +395,18 @@ export function NewComponent({ title, children }) {
 ### Environment Variables
 
 The application may use environment variables for configuration. Create a `.env.local` file for local development and set appropriate variables in your production environment.
+
+---
+
+## Additional Documentation
+
+For more detailed information about specific components and systems, please refer to these specialized documentation files:
+
+1. [Chatbot System Documentation](./chatbot-system.md) - Details about the interactive city information chatbot
+2. [Zellij Pattern System](./zellij-pattern-system.md) - Documentation for the Moroccan pattern system
+3. [User Guide](./user-guide.md) - End-user documentation (also available in [French](./user-guide-fr.md))
+
+These documents provide in-depth information about specific aspects of the platform and are regularly updated as new features are added.
 
 ---
 

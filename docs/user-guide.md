@@ -9,13 +9,14 @@ This guide will help you navigate and make the most of your Moroccan experience.
 ## Table of Contents
 
 1. [Getting Started](#getting-started)
-2. [Finding Match Information](#finding-match-information)
-3. [Exploring Food Options](#exploring-food-options)
-4. [Finding Accommodation](#finding-accommodation)
-5. [Transportation Guide](#transportation-guide)
-6. [Creating an Account](#creating-an-account)
-7. [Contacting Support](#contacting-support)
-8. [Frequently Asked Questions](#frequently-asked-questions)
+2. [Using the Chatbot](#using-the-chatbot)
+3. [Finding Match Information](#finding-match-information)
+4. [Exploring Food Options](#exploring-food-options)
+5. [Finding Accommodation](#finding-accommodation)
+6. [Transportation Guide](#transportation-guide)
+7. [Creating an Account](#creating-an-account)
+8. [Contacting Support](#contacting-support)
+9. [Frequently Asked Questions](#frequently-asked-questions)
 
 ---
 
@@ -28,6 +29,36 @@ The Moroccan Experience Platform is a web application that can be accessed from 
 ### Navigation Basics
 
 The platform features an intuitive navigation system:
+
+---
+
+## Using the Chatbot
+
+The Moroccan Experience Platform includes an interactive chatbot to help you learn about Moroccan cities and travel costs.
+
+### Accessing the Chatbot
+
+1. Look for the chat button in the bottom-right corner of any page
+2. Click on the button to open the chatbot interface
+3. The button will display a tooltip when you hover over it
+
+### Getting City Information
+
+The chatbot provides information about major Moroccan cities including:
+- Hotel price ranges
+- Restaurant price ranges
+- Main attractions and entry fees
+
+### Using Predefined Questions
+
+The chatbot includes several predefined questions to help you get started:
+1. Click on any of the question buttons to automatically send that question
+2. The chatbot will respond with relevant information
+3. You can also type your own questions in the message input field
+
+### Closing the Chatbot
+
+To close the chatbot interface, click the X button in the top-right corner of the chat window or click outside the chat area.
 
 - **Header Menu**: Located at the top of every page, the header menu provides access to all main sections of the platform.
 - **Footer**: The footer contains additional links, contact information, and social media connections.

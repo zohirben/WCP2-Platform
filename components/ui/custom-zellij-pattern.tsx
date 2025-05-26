@@ -26,9 +26,9 @@ import { cn } from "@/lib/utils";
  * - Pattern Visualizer available at /pattern-visualizer for testing configurations
  * 
  * ## Pattern Assets:
- * - Main patterns: /public/zellij-2.jpg and /public/zellij-tile.jpg
+ * - Main patterns: /public/assets/images/zellij-2.jpg and /public/assets/images/zellij-tile.jpg
  * - Additional options in /public/pattern-options/
- * - Use manage-patterns.sh script to add new patterns
+ * - SVG patterns provide better scaling for responsive designs
  */
 
 interface CustomZellijPatternProps {

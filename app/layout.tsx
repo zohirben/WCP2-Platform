@@ -5,6 +5,7 @@ import { SITE_CONFIG } from '@/lib/constants';
 import { inter, amiri } from '@/lib/fonts';
 import Header from '@/components/navigation/header';
 import Footer from '@/components/navigation/footer';
+import { ChatbotButton } from '@/components/ui/chatbot-button';
 
 export const metadata: Metadata = {
   title: {
@@ -27,6 +28,7 @@ export default function RootLayout({
         </div>
         <main className="flex-1">{children}</main>
         <Footer />
+        <ChatbotButton />
       </body>
     </html>
   );

@@ -25,11 +25,10 @@ export default function Home() {
   return (
     <div className={`${loaded ? "opacity-100" : "opacity-0"} transition-opacity duration-500`}>
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-moroccan-red text-white">
-        <div 
+      <section className="relative overflow-hidden bg-moroccan-red text-white">          <div 
           className="absolute inset-0 opacity-10 z-0 pointer-events-none animate-pattern-float"
           style={{
-            backgroundImage: "url('/zellij-2.jpg')",
+            backgroundImage: "url('/assets/images/zellij-2.jpg')",
             backgroundRepeat: "repeat",
             backgroundSize: "350px",
           }}
@@ -150,7 +149,7 @@ export default function Home() {
       {/* Featured Match */}
       <section className="py-16 bg-[#F7FAFC] dark:bg-gray-900 relative overflow-hidden">
         <CustomZellijPattern 
-          imageUrl="/zellij-2.jpg" 
+          imageUrl="/assets/images/zellij-2.jpg" 
           opacity={0.1} 
           size="350px" 
         />
@@ -163,7 +162,7 @@ export default function Home() {
               <div className="md:w-1/2 relative">
                 <div className="aspect-video relative">
                   <Image
-                    src="/featured match.webp"
+                    src="/assets/images/featured match.webp"
                     alt="Featured Moroccan Destination"
                     fill
                     className="object-cover"
@@ -236,7 +235,7 @@ export default function Home() {
             <OfferCard
               title="Transportation Services"
               description="Navigate Morocco with ease using our guide to local transportation options and services."
-              imageSrc="/public transportation.webp"
+              imageSrc="/assets/images/public transportation.webp"
               ctaText="View Transportation"
               ctaHref="/offers"
               className="animate-fadeInUp animate-delay-200"
@@ -250,7 +249,7 @@ export default function Home() {
         <div 
           className="absolute inset-0 opacity-10 z-0 pointer-events-none animate-pattern-float"
           style={{
-            backgroundImage: "url('/downloaded designs/Tarceeh 1-7-11imageOne.jpg')",
+            backgroundImage: "url('/assets/patterns/Tarceeh 1-7-11imageOne.jpg')",
             backgroundRepeat: "repeat",
             backgroundSize: "400px",
             imageRendering: "auto",

@@ -146,8 +146,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Match */}
-      <section className="py-16 bg-[#F7FAFC] dark:bg-gray-900 relative overflow-hidden">
+      {/* Featured Match - Hidden but preserved for future use */}
+      <section className="py-16 bg-[#F7FAFC] dark:bg-gray-900 relative overflow-hidden" style={{ display: 'none' }}>
         <CustomZellijPattern 
           imageUrl="/assets/images/zellij-2.jpg" 
           opacity={0.1} 
@@ -205,6 +205,27 @@ export default function Home() {
           </div>
         </div>
       </section>
+      
+      {/* Placeholder message for what will appear when component is ready */}
+      <section className="py-16 bg-[#F7FAFC] dark:bg-gray-900 relative overflow-hidden">
+        <CustomZellijPattern 
+          imageUrl="/assets/images/zellij-2.jpg" 
+          opacity={0.1} 
+          size="350px" 
+        />
+        <div className="container mx-auto px-4 relative z-10">
+          <h2 className="section-title">
+            Featured Matches
+          </h2>
+          <div className="p-8 rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-700 text-center">
+            <h3 className="font-amiri text-2xl font-bold mb-2">Match Schedule Coming Soon</h3>
+            <p className="text-muted-foreground mb-2">The official match schedule for World Cup 2026 matches in Morocco will be announced closer to the event.</p>
+            <ButtonCTA href="/offers" variant="outline" showArrow>
+              Check Back Later
+            </ButtonCTA>
+          </div>
+        </div>
+      </section>
 
       {/* Featured Places */}
       <section className="py-16 relative overflow-hidden">
@@ -213,7 +234,7 @@ export default function Home() {
             Discover Morocco
           </h2>
           <p className="text-muted-foreground max-w-2xl mb-12">
-            Experience the best of Morocco's rich culture, exquisite cuisine, and stunning landscapes on your Moroccan adventure.
+            Experience the best of Morocco&apos;s rich culture, exquisite cuisine, and stunning landscapes on your Moroccan adventure.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <OfferCard

@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Facebook, Instagram, Twitter, Mail, Phone, MapPin } from "lucide-react";
+import TikTok from "@/components/ui/tiktok-icon";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -143,7 +144,7 @@ export default function ContactPage() {
                     
                     {formStatus === "success" && (
                       <div className="bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300 p-3 rounded-md text-sm">
-                        Thank you for your message! We'll get back to you shortly.
+                        Thank you for your message! We&apos;ll get back to you shortly.
                       </div>
                     )}
                     
@@ -227,6 +228,13 @@ export default function ContactPage() {
                     >
                       <Instagram size={20} />
                       <span className="sr-only">Instagram</span>
+                    </a>
+                    <a 
+                      href="#" 
+                      className="h-10 w-10 rounded-full bg-[#000000] text-white flex items-center justify-center hover:bg-[#333333] transition-colors"
+                    >
+                      <TikTok size={20} />
+                      <span className="sr-only">TikTok</span>
                     </a>
                   </div>
                 </div>

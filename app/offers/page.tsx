@@ -9,6 +9,7 @@ import {
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { OfferCard } from "@/components/offer-card";
+import { ButtonCTA } from "@/components/ui/button-cta";
 import { ZellijPattern, MoroccanArchPattern } from "@/components/ui/pattern";
 import { CalendarCheck, Utensils, Building, Bus, Star } from "lucide-react";
 import Image from "next/image";
@@ -66,8 +67,18 @@ export default function OffersPage() {
               <p className="text-muted-foreground mb-8 max-w-3xl">
                 Find the complete match schedule with all the matches happening across Moroccan stadiums. Plan your visit to catch your favorite teams in action.
               </p>
+
+              {/* Coming Soon placeholder */}
+              <div className="p-8 rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-700 text-center">
+                <h3 className="font-amiri text-2xl font-bold mb-2">Match Schedule Coming Soon</h3>
+                <p className="text-muted-foreground mb-4">The official match schedule for World Cup 2026 matches in Morocco will be announced closer to the event.</p>
+                <ButtonCTA variant="outline" showArrow href="/offers">
+                  Check Back Later
+                </ButtonCTA>
+              </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Original match schedule content - hidden */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6" style={{ display: 'none' }}>
                 {PLACEHOLDER_SITES.map((match) => (
                   <Card key={match.id} className="overflow-hidden border-border/50 transition-all hover:shadow-md">
                     <CardHeader className="bg-[#2B6CB0] text-white pb-4">
